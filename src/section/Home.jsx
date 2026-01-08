@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="w-full min-h-screen relative bg-black overflow-hidden flex flex-col justify-center pt-20"
+      className="w-full min-h-screen relative bg-black overflow-hidden flex flex-col justify-center pt-24 sm:pt-20 px-4 sm:px-0"
     >
       {/* Particles Background */}
       <ParticlesBackground />
@@ -69,7 +69,7 @@ export default function Home() {
           className="max-w-[48rem]"
         >
           {/* Heading */}
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
             Hi, I’m{" "}
             <span
               className="
@@ -98,7 +98,7 @@ export default function Home() {
           </h1>
 
           {/* About */}
-          <p className="text-gray-300 text-lg md:text-xl leading-relaxed mt-4">
+          <p className="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed mt-4">
             With over{" "}
             <span className="text-[#1cd8d2] font-medium">4.6 years</span> of
             hands-on experience as a{" "}
@@ -111,7 +111,7 @@ export default function Home() {
           </p>
 
           {/* Resume + Social Links */}
-          <div className="mt-8 flex flex-col items-center lg:items-start gap-4">
+          <div className="mt-8 flex flex-col items-center lg:items-start gap-4 w-full sm:w-auto">
             <a
               href="/resume/Satyajit_Rout_Resume.pdf"
               download
@@ -129,7 +129,7 @@ export default function Home() {
             </a>
 
             {/* Social Icons */}
-            <div className="flex gap-4 mt-2">
+            <div className="flex gap-5 mt-2">
               <a
                 href={socials[0].link}
                 target="_blank"
@@ -161,12 +161,12 @@ export default function Home() {
         </motion.div>
       </div>
 
-      {/* Floating Avatar Logo (HOME ONLY) */}
-      <div className="absolute right-25 top-1/2 -translate-y-1/2 z-50">
+      {/* Floating Avatar Logo (Desktop Only) */}
+      <div className="hidden lg:block absolute right-10 top-1/2 -translate-y-1/2 z-50">
         <img
           src={Logo}
           alt="Logo"
-          className="w-[420px] h-[420px] object-contain transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_40px_#1cd8d2]"
+          className="w-[280px] h-[280px] xl:w-[420px] xl:h-[420px] object-contain transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_40px_#1cd8d2]"
         />
       </div>
     </section>

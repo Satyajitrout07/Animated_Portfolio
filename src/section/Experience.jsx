@@ -53,33 +53,31 @@ export default function Experience() {
       id="experience"
       ref={ref}
       className="
-        relative min-h-screen w-full py-24
+        relative min-h-screen w-full py-20 sm:py-24
         bg-gradient-to-b
         from-[#0b0f2a] via-[#120b2d] to-[#0b1a2d]
         text-white overflow-hidden
       "
     >
-      {/* Pink + Blue Ambient Glows */}
+      {/* Ambient Glows */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Blue glow */}
-        <div className="absolute top-1/4 left-0 w-[380px] h-[380px] rounded-full bg-gradient-to-r from-[#3b82f6] via-[#22d3ee] to-transparent opacity-25 blur-[160px]" />
-        {/* Pink glow */}
-        <div className="absolute bottom-1/4 right-0 w-[380px] h-[380px] rounded-full bg-gradient-to-r from-[#ec4899] via-[#f472b6] to-transparent opacity-25 blur-[160px]" />
+        <div className="absolute top-1/4 left-0 w-[280px] sm:w-[380px] h-[280px] sm:h-[380px] rounded-full bg-gradient-to-r from-[#3b82f6] via-[#22d3ee] to-transparent opacity-25 blur-[160px]" />
+        <div className="absolute bottom-1/4 right-0 w-[280px] sm:w-[380px] h-[280px] sm:h-[380px] rounded-full bg-gradient-to-r from-[#ec4899] via-[#f472b6] to-transparent opacity-25 blur-[160px]" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-16 sm:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#22d3ee] via-[#ec4899] to-[#22d3ee]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#22d3ee] via-[#ec4899] to-[#22d3ee]">
             Experience
           </h2>
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+          <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm sm:text-base">
             Career progression focused on backend architecture, scalability,
             and measurable business impact.
           </p>
@@ -87,8 +85,11 @@ export default function Experience() {
 
         {/* Timeline */}
         <div className="relative">
-          {/* Scroll-based timeline line */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-[2px] bg-white/10">
+          {/* Timeline Line */}
+          <div className="
+            absolute top-0 h-full w-[2px] bg-white/10
+            left-4 sm:left-1/2 sm:-translate-x-1/2
+          ">
             <motion.div
               style={{ height: lineHeight }}
               className="w-full bg-gradient-to-b from-[#22d3ee] via-[#ec4899] to-transparent"
@@ -103,19 +104,21 @@ export default function Experience() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               className={`
-                relative mb-24 w-full flex
-                ${index % 2 === 0 ? "justify-start pr-12" : "justify-end pl-12"}
+                relative mb-16 sm:mb-24 w-full flex
+                justify-start
+                sm:${index % 2 === 0 ? "justify-start pr-12" : "justify-end pl-12"}
+                pl-12 sm:pl-0
               `}
             >
-              {/* Experience Card */}
+              {/* Card */}
               <motion.div
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.3 }}
                 className="
-                  w-full md:w-[45%]
+                  w-full sm:w-full md:w-[45%]
                   rounded-2xl border border-white/10
                   bg-white/5 backdrop-blur-md
-                  p-6
+                  p-5 sm:p-6
                 "
               >
                 {/* Header */}
@@ -125,7 +128,7 @@ export default function Experience() {
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-semibold flex items-center gap-2">
+                    <h3 className="text-lg sm:text-xl font-semibold flex items-center gap-2">
                       {exp.role}
                       {exp.promotion && (
                         <FaArrowUp className="text-pink-400 text-sm" />
@@ -157,7 +160,7 @@ export default function Experience() {
                 </div>
 
                 {/* Responsibilities */}
-                <ul className="space-y-2 text-gray-300 list-disc list-inside">
+                <ul className="space-y-2 text-gray-300 list-disc list-inside text-sm sm:text-base">
                   {exp.points.map((point, i) => (
                     <motion.li
                       key={i}
@@ -173,7 +176,10 @@ export default function Experience() {
               </motion.div>
 
               {/* Timeline Dot */}
-              <div className="absolute left-1/2 -translate-x-1/2 top-6">
+              <div className="
+                absolute top-6
+                left-4 sm:left-1/2 sm:-translate-x-1/2
+              ">
                 <div className="w-4 h-4 rounded-full bg-gradient-to-r from-[#22d3ee] to-[#ec4899] shadow-[0_0_18px_rgba(236,72,153,0.8)]" />
               </div>
             </motion.div>

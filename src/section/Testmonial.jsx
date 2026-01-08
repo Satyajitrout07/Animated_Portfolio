@@ -4,7 +4,7 @@ import { FaQuoteLeft, FaLinkedinIn } from "react-icons/fa";
 
 import m1 from "../assets/m1.jpg";
 
-import m2 from "../assets/m2.png";
+import m2 from "../assets/m2.jpg";
 import w1 from "../assets/w1.png";
 
 const testimonials = [
